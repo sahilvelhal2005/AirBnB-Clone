@@ -1,0 +1,30 @@
+<%layout("/layouts/boilerplate")%>
+
+<div class="row">
+    <div class="col-8 offset-2">
+
+    
+    
+    <!-- <div class="card" style="width: 18rem;">
+  <img src="<%=details.image.url%>" class="card-img-top show-img" alt="...">
+  <div class="card-body">
+    <p class="card-text"><%=details.title%></p>
+  </div>
+</div> -->
+
+    <h1><%=details.title%></h1>
+    <p><%=details.description%></p>
+    <img src="<%=details.image.url%>" alt="<%=details.image.filename%>">
+    <h3><b>Price:</b> &#x20B9;<%=details.price.toLocaleString("en-IN")%></h3>
+    <h3><b>Location:</b> <%=details.location%></h3>
+    <h3><b>Country:</b> <%=details.country%></h3>
+
+    <form method="POST" action="/listings/<%=details._id%>?_method=DELETE">
+        <button>Delete</button>
+    </form>
+    <form method="GET" action="/listings/<%=details._id%>/edit">
+        <button>Edit</button>
+    </form>
+
+    </div>
+</div>

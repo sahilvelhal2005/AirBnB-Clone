@@ -1,0 +1,57 @@
+<%layout("/layouts/boilerplate")%>
+
+<div class="row mt-3">
+    <div class="col-8 offset-2">
+
+    
+
+    <h1>Edit Listing</h1>
+    <form novalidate class="needs-validation" method="POST" action="/listings/<%=listing._id%>?_method=PUT">
+        <div class="mb-3">
+        <lable for="title" class="form-label">Title: </lable>
+        <input type="text" id="title" class="form-control" name="title" value="<%=listing.title%>">
+        <div class="valid-feedback">Title Looks Good!!</div>
+        </div>
+
+        <br>
+
+        <div class="md-3">
+        <lable for="description" class="form-label">Description: </lable>
+        <textarea required type="text" id="description" name="description" rows="5" cols="10" class="form-control"><%=listing.description%></textarea>
+        </div>
+
+        <br>
+
+        <div class="mb-3">
+        <lable for="img" class="form-label">Image: </lable>
+        <textarea type="text" id="img" name="imgage" value="<%=listing.image%>" class="form-control"><%=listing.image.url%></textarea>
+        </div>
+
+
+        <br>
+
+        <div class="mb-3">
+        <lable for="price" class="form-label">Price: </lable>
+        <input type="number" id="price" name="price" value="<%=listing.price%>" class="form-control">
+        </div>
+        
+        <br>
+        
+        <div class="mb-3">
+        <lable for="location" class="form-label">Location: </lable>
+        <input type="text" id="location" name="location" value="<%=listing.location%>" class="form-control">
+        </div>
+
+        <br>
+        
+        <div class="mb-3">
+        <lable for="country" class="form-label">Country: </lable>
+        <input type="text" id="country" name="country" value="<%=listing.country%>" class="form-control">
+        </div>
+
+        <br>
+        <button class="btn btn-dark edit-btn mt-3">Save Changes</button>
+    </form>
+    
+</div>
+</div>
